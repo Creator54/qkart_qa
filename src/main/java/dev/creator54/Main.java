@@ -63,11 +63,11 @@ public class Main {
 
         if (!registrationStatus) {
             takeScreenshot(driver, "Registration_Failure", "TestCase01");
-            logStatus("TestCase 1", "Test Case Fail. User Registration Failed", "FAIL");
+            logStatus("TestCase 1", "Test Case 1: User Registration Failed", "FAIL");
             return false;
         } else {
             takeScreenshot(driver, "Registration_Passed", "TestCase01");
-            logStatus("TestCase 1", "Test Case Pass. User Registration Passed", "PASS");
+            logStatus("TestCase 1", "Test Case 1: User Registration Passed", "PASS");
         }
 
         // Save the last generated username
@@ -77,7 +77,7 @@ public class Main {
         Login login = new Login(driver);
         login.navigateToLoginPage();
         Boolean loginStatus = login.PerformLogin(lastGeneratedUserName, "abc@125");
-        logStatus("Test Step", "User Perform Login: ", loginStatus ? "PASS" : "FAIL");
+        logStatus("Test Step", "Test Case 1: User Perform Login", loginStatus ? "PASS" : "FAIL");
 
         if (!loginStatus) {
             takeScreenshot(driver, "Login_Failure", "TestCase01");
@@ -99,17 +99,17 @@ public class Main {
      */
     public static Boolean TestCase02(RemoteWebDriver driver) throws InterruptedException {
         takeScreenshot(driver, "StartTestCase", "TestCase02");
-        logStatus("Start Testcase", "Test Case 2: Verify User Registration with an existing username", "DONE");
+        logStatus("Start TestCase", "Test Case 2: Verify User Registration with an existing username", "DONE");
 
         // Step 1: User Registration
         Register registration = new Register(driver);
         registration.navigateToRegisterPage();
         Boolean registrationStatus = registration.registerUser("testUser", "abc@125", true);
-        logStatus("Test Step", "User Registration: ", registrationStatus ? "PASS" : "FAIL");
+        logStatus("Test Step", "Test Case 2: User Registration", registrationStatus ? "PASS" : "FAIL");
 
         if (!registrationStatus) {
             takeScreenshot(driver, "Registration_Failure", "TestCase02");
-            logStatus("End TestCase", "Test Case 2: Verify user Registration", "FAIL");
+            logStatus("End TestCase", "Test Case 2: Verify User Registration with an existing username", "FAIL");
             return false;
         }
 
@@ -123,7 +123,7 @@ public class Main {
         // If reregistrationStatus is true, then reregistration succeeded, else it failed.
         // In this case, reregistration failure means Success (blocked).
         takeScreenshot(driver, "Reregistration_" + (reregistrationStatus ? "Allowed" : "Blocked"), "TestCase02");
-        logStatus("End TestCase", "Test Case 2: Verify if user Reregistration using same username is not allowed", reregistrationStatus ? "FAIL" : "PASS");
+        logStatus("End TestCase", "Test Case 2: Verify if user Reregistration using the same username is not allowed", reregistrationStatus ? "FAIL" : "PASS");
 
         return !reregistrationStatus;
     }
@@ -133,7 +133,7 @@ public class Main {
      */
     public static Boolean TestCase03(RemoteWebDriver driver) throws InterruptedException {
         takeScreenshot(driver, "StartTestCase", "TestCase03");
-        logStatus("TestCase 3", "Start test case: Verify functionality of the search box", "DONE");
+        logStatus("Start TestCase", "Test Case 3: Verify functionality of the search box", "DONE");
 
         boolean status;
 
@@ -145,7 +145,8 @@ public class Main {
         status = homePage.searchForProduct("YONEX");
         if (!status) {
             takeScreenshot(driver, "Search_Failure", "TestCase03");
-            logStatus("TestCase 3", "Test Case Failure. Unable to search for the given product", "FAIL");
+            logStatus("Test Step", "Search for the \"YONEX\" product", "FAIL");
+            logStatus("End TestCase", "Test Case 3: Verify functionality of the search box", "FAIL");
             return false;
         }
 
@@ -154,7 +155,9 @@ public class Main {
 
         // Verify the search results are available
         if (searchResults.size() == 0) {
-            logStatus("TestCase 3", "Test Case Failure. There were no results for the given search string", "FAIL");
+            takeScreenshot(driver, "No_Results_Found", "TestCase03");
+            logStatus("Test Step", "Verify that search results are available", "FAIL");
+            logStatus("End TestCase", "Test Case 3: Verify functionality of the search box", "FAIL");
             return false;
         }
 
@@ -167,12 +170,13 @@ public class Main {
             String elementText = resultElement.getTitleofResult();
             if (!elementText.toUpperCase().contains("YONEX")) {
                 takeScreenshot(driver, "Unexpected_Result", "TestCase03");
-                logStatus("TestCase 3", "Test Case Failure. Test Results contain unexpected values: " + elementText, "FAIL");
+                logStatus("Test Step", "Verify that search results contain the expected text: YONEX", "FAIL");
+                logStatus("End TestCase", "Test Case 3: Verify functionality of the search box", "FAIL");
                 return false;
             }
         }
 
-        logStatus("Step Success", "Successfully validated the search results", "PASS");
+        logStatus("Test Step", "Successfully validated the search results", "PASS");
 
         // Step 2: Search for product "Gesundheit"
         status = homePage.searchForProduct("Gesundheit");
@@ -181,16 +185,16 @@ public class Main {
         searchResults = homePage.getSearchResults();
         if (searchResults.size() == 0) {
             if (homePage.isNoResultFound()) {
-                logStatus("Step Success", "Successfully validated that no products found message is displayed", "PASS");
+                logStatus("Test Step", "Successfully validated that no products found message is displayed", "PASS");
             }
-            logStatus("TestCase 3", "Test Case PASS. Verified that no search results were found for the given text", "PASS");
         } else {
             takeScreenshot(driver, "Results_Available", "TestCase03");
-            logStatus("TestCase 3", "Test Case Fail. Expected: no results, actual: Results were available", "FAIL");
-            return false;
+            logStatus("Test Step", "Verify that no search results are found for the given text", "FAIL");
+            status = false;
         }
 
-        return true;
+        logStatus("End TestCase", "Test Case 3: Verify functionality of the search box", status ? "PASS":"FAIL");
+        return status;
     }
 
     /*
@@ -199,14 +203,14 @@ public class Main {
      */
     public static Boolean TestCase04(RemoteWebDriver driver) throws InterruptedException {
         takeScreenshot(driver, "StartTestCase", "TestCase04");
-        logStatus("TestCase 4", "Start test case: Verify the presence of size Chart", "DONE");
+        logStatus("Start TestCase", "Test Case 4: Verify the presence of Size Chart", "DONE");
         boolean status = false;
 
         // Visit home page
         Home homePage = new Home(driver);
         homePage.navigateToHome();
 
-        // Step 1: Search for product and get card content element of search results
+        // Step 1: Search for a product and get card content element of search results
         status = homePage.searchForProduct("Running Shoes");
         List<WebElement> searchResults = homePage.getSearchResults();
 
@@ -244,25 +248,28 @@ public class Main {
                     } else {
                         logStatus("Step Failure", "Failure while validating contents of Size Chart Link", "FAIL");
                         status = false;
+                        break;
                     }
 
                     // Step 4: Close the size chart modal
                     status = result.closeSizeChart(driver);
                     takeScreenshot(driver, "SizeChart_Closed", "TestCase04");
                 } else {
-                    logStatus("TestCase 4", "Test Case Fail. Failure to open Size Chart", "FAIL");
+                    logStatus("Step Failure", "Failure to open Size Chart", "FAIL");
                     takeScreenshot(driver, "SizeChart_Open_Failure", "TestCase04");
-                    return false;
+                    status=false;
+                    break;
                 }
 
             } else {
-                logStatus("TestCase 4", "Test Case Fail. Size Chart Link does not exist", "FAIL");
+                logStatus("Test Step", "Size Chart Link does not exist for this search result", "FAIL");
                 takeScreenshot(driver, "SizeChart_Existence_Failure", "TestCase04");
-                return false;
+                status=false;
+                break;
             }
         }
 
-        logStatus("TestCase 4", "End Test Case: Validated Size Chart Details", status ? "PASS" : "FAIL");
+        logStatus("End TestCase", "Test Case 4: Verify the presence of Size Chart", status ? "PASS" : "FAIL");
         takeScreenshot(driver, "SizeChart_Validated", "TestCase04");
         return status;
     }
@@ -283,8 +290,10 @@ public class Main {
 
         // Step 2: Register a new user
         status = registration.registerUser("testUser", "abc@125", true);
+        logStatus("Step Success", "User Registration: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("TestCase 5", "Test Case Failure. Happy Flow Test Failed", "FAIL");
+            logStatus("End TestCase", "Test Case 5: Happy Flow Test Failed", "FAIL");
             takeScreenshot(driver, "Registration_Failure", "TestCase05");
             return false;
         }
@@ -298,9 +307,10 @@ public class Main {
 
         // Step 4: Login with the newly registered user's credentials
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Login Failed", status ? "PASS" : "FAIL");
-            logStatus("End TestCase", "Test Case 5: Happy Flow Test Failed : ", status ? "PASS" : "FAIL");
+            logStatus("End TestCase", "Test Case 5: Happy Flow Test Failed", status ? "PASS" : "FAIL");
             takeScreenshot(driver, "Login_Failure", "TestCase05");
             return false;
         }
@@ -328,6 +338,7 @@ public class Main {
 
         // Step 10: Check if placing order redirected to the Thanks page
         status = driver.getCurrentUrl().endsWith("/thanks");
+        logStatus("Step Success", "Placing Order and Redirecting to Thanks Page: ", status ? "PASS" : "FAIL");
 
         // Step 11: Go to the home page
         homePage.navigateToHome();
@@ -335,7 +346,7 @@ public class Main {
         // Step 12: Log out the user
         homePage.PerformLogout();
 
-        logStatus("End TestCase", "Test Case 5: Happy Flow Test Completed : ", status ? "PASS" : "FAIL");
+        logStatus("End TestCase", "Test Case 5: Happy Flow Test Completed", status ? "PASS" : "FAIL");
         takeScreenshot(driver, "HappyFlow_Verified", "TestCase05");
         return status;
     }
@@ -357,9 +368,10 @@ public class Main {
 
         // Step 2: Register a new user
         status = registration.registerUser("testUser", "abc@125", true);
+        logStatus("Step Success", "User Registration: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Register Failed", status ? "PASS" : "FAIL");
-            logStatus("End TestCase", "Test Case 6: Verify that cart can be edited: ", status ? "PASS" : "FAIL");
+            logStatus("End TestCase", "Test Case 6: Verify that cart can be edited", "FAIL");
             takeScreenshot(driver, "Registration_Failure", "TestCase06");
             return false;
         }
@@ -369,9 +381,10 @@ public class Main {
 
         // Step 3: Login with the newly registered user's credentials
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Login Failed", status ? "PASS" : "FAIL");
-            logStatus("End TestCase", "Test Case 6: Verify that cart can be edited: ", status ? "PASS" : "FAIL");
+            logStatus("End TestCase", "Test Case 6: Verify that cart can be edited", "FAIL");
             takeScreenshot(driver, "Login_Failure", "TestCase06");
             return false;
         }
@@ -387,12 +400,15 @@ public class Main {
 
         // Step 5: Update watch quantity to 2
         homePage.changeProductQuantityinCart("Xtend Smart Watch", 2);
+        logStatus("Step Success", "Updated quantity of Xtend Smart Watch to 2", "PASS");
 
         // Step 6: Update table lamp quantity to 0
         homePage.changeProductQuantityinCart("Yarine Floor Lamp", 0);
+        logStatus("Step Success", "Updated quantity of Yarine Floor Lamp to 0", "PASS");
 
         // Step 7: Update watch quantity again to 1
         homePage.changeProductQuantityinCart("Xtend Smart Watch", 1);
+        logStatus("Step Success", "Updated quantity of Xtend Smart Watch to 1", "PASS");
 
         homePage.clickCheckout();
 
@@ -404,11 +420,12 @@ public class Main {
 
         // Step 8: Check if placing order redirected to the Thanks page
         status = driver.getCurrentUrl().endsWith("/thanks");
+        logStatus("Step Success", "Placing Order and Redirecting to Thanks Page: ", status ? "PASS" : "FAIL");
 
         homePage.navigateToHome();
         homePage.PerformLogout();
 
-        logStatus("End TestCase", "Test Case 6: Verify that cart can be edited: ", status ? "PASS" : "FAIL");
+        logStatus("End TestCase", "Test Case 6: Verify that cart can be edited", status ? "PASS" : "FAIL");
         takeScreenshot(driver, "Cart_Edit_Verified", "TestCase06");
         return status;
     }
@@ -431,10 +448,10 @@ public class Main {
 
         // Step 1: Register a new user
         status = registration.registerUser("testUser", "abc@125", true);
+        logStatus("Step Success", "User Registration: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Register Failed", status ? "PASS" : "FAIL");
-            logStatus("End TestCase", "Test Case 7: Verify that cart contents are persisted after logout: ",
-                    status ? "PASS" : "FAIL");
+            logStatus("End TestCase", "Test Case 7: Verify that cart contents are persisted after logout", "FAIL");
             takeScreenshot(driver, "Registration_Failure", "TestCase07");
             return false;
         }
@@ -444,10 +461,10 @@ public class Main {
 
         // Step 2: Login with the newly registered user's credentials
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Login Failed", status ? "PASS" : "FAIL");
-            logStatus("End TestCase", "Test Case 7: Verify that cart contents are persisted after logout: ",
-                    status ? "PASS" : "FAIL");
+            logStatus("End TestCase", "Test Case 7: Verify that cart contents are persisted after logout", "FAIL");
             takeScreenshot(driver, "Login_Failure", "TestCase07");
             return false;
         }
@@ -457,9 +474,11 @@ public class Main {
         // Step 3: Find required products by searching and add them to the user's cart
         status = homePage.searchForProduct("Stylecon");
         homePage.addProductToCart("Stylecon 9 Seater RHS Sofa Set ");
+        logStatus("Step Success", "Added 'Stylecon 9 Seater RHS Sofa Set' to the cart", status ? "PASS" : "FAIL");
 
         status = homePage.searchForProduct("Xtend");
         homePage.addProductToCart("Xtend Smart Watch");
+        logStatus("Step Success", "Added 'Xtend Smart Watch' to the cart", status ? "PASS" : "FAIL");
 
         homePage.PerformLogout();
 
@@ -467,11 +486,13 @@ public class Main {
 
         // Step 4: Login again with the same user's credentials
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login after Logout: ", status ? "PASS" : "FAIL");
 
         // Step 5: Verify if the cart contents are persisted after logout
         status = homePage.verifyCartContents(expectedResult);
+        logStatus("Step Success", "Cart Contents Persisted after Logout: ", status ? "PASS" : "FAIL");
 
-        logStatus("End TestCase", "Test Case 7: Verify that cart contents are persisted after logout: ",
+        logStatus("End TestCase", "Test Case 7: Verify that cart contents are persisted after logout",
                 status ? "PASS" : "FAIL");
         takeScreenshot(driver, "Cart_Contents_Persisted", "TestCase07");
 
@@ -481,6 +502,7 @@ public class Main {
 
     public static Boolean TestCase08(RemoteWebDriver driver) throws InterruptedException {
         Boolean status;
+
         logStatus("Start TestCase",
                 "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough",
                 "DONE");
@@ -491,11 +513,12 @@ public class Main {
 
         // Step 1: Register a new user
         status = registration.registerUser("testUser", "abc@125", true);
+        logStatus("Step Success", "User Registration: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Registration Failed", status ? "PASS" : "FAIL");
             logStatus("End TestCase",
-                    "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough: ",
-                    status ? "PASS" : "FAIL");
+                    "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough",
+                    "FAIL");
             takeScreenshot(driver, "Registration_Failure", "TestCase08");
             return false;
         }
@@ -506,11 +529,12 @@ public class Main {
 
         // Step 2: Login with the newly registered user's credentials
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Login Failed", status ? "PASS" : "FAIL");
             logStatus("End TestCase",
-                    "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough: ",
-                    status ? "PASS" : "FAIL");
+                    "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough",
+                    "FAIL");
             takeScreenshot(driver, "Login_Failure", "TestCase08");
             return false;
         }
@@ -521,8 +545,10 @@ public class Main {
         // Step 3: Find required products by searching and add them to the user's cart
         status = homePage.searchForProduct("Stylecon");
         homePage.addProductToCart("Stylecon 9 Seater RHS Sofa Set ");
+        logStatus("Step Success", "Added 'Stylecon 9 Seater RHS Sofa Set' to the cart", status ? "PASS" : "FAIL");
 
         homePage.changeProductQuantityinCart("Stylecon 9 Seater RHS Sofa Set ", 10);
+        logStatus("Step Success", "Changed product quantity in the cart to 10", status ? "PASS" : "FAIL");
 
         homePage.clickCheckout();
 
@@ -534,8 +560,10 @@ public class Main {
 
         // Step 4: Verify if the insufficient balance error message is displayed
         status = checkoutPage.verifyInsufficientBalanceMessage();
+        logStatus("Step Success", "Verified that the insufficient balance error message is displayed", status ? "PASS" : "FAIL");
+
         logStatus("End TestCase",
-                "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough: ",
+                "Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough",
                 status ? "PASS" : "FAIL");
         takeScreenshot(driver, "Insufficient_Balance_Error", "TestCase08");
 
@@ -554,9 +582,11 @@ public class Main {
         Register registration = new Register(driver);
         registration.navigateToRegisterPage();
         status = registration.registerUser("testUser", "abc@125", true);
+        logStatus("Step Success", "User Registration: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("TestCase 9",
-                    "Test Case Failure. Verify that product added to cart is available when a new tab is opened",
+            logStatus("End TestCase",
+                    "Test Case 9: Verify that product added to cart is available when a new tab is opened",
                     "FAIL");
             takeScreenshot(driver, "Failure", "TestCase09");
             return false;
@@ -566,12 +596,13 @@ public class Main {
         Login login = new Login(driver);
         login.navigateToLoginPage();
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Login Failed", status ? "PASS" : "FAIL");
-            takeScreenshot(driver, "Failure", "TestCase09");
             logStatus("End TestCase",
-                    "Test Case 9:   Verify that product added to cart is available when a new tab is opened",
-                    status ? "PASS" : "FAIL");
+                    "Test Case 9: Verify that product added to cart is available when a new tab is opened",
+                    "FAIL");
+            takeScreenshot(driver, "Failure", "TestCase09");
             return false;
         }
 
@@ -580,6 +611,7 @@ public class Main {
 
         status = homePage.searchForProduct("YONEX");
         homePage.addProductToCart("YONEX Smash Badminton Racquet");
+        logStatus("Step Success", "Added 'YONEX Smash Badminton Racquet' to the cart", status ? "PASS" : "FAIL");
 
         String currentURL = driver.getCurrentUrl();
 
@@ -590,9 +622,9 @@ public class Main {
 
         List<String> expectedResult = Arrays.asList("YONEX Smash Badminton Racquet");
         status = homePage.verifyCartContents(expectedResult);
+        logStatus("Step Success", "Verified that the cart contents are available in the new tab", status ? "PASS" : "FAIL");
 
         driver.close();
-
         driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
 
         logStatus("End TestCase",
@@ -607,16 +639,18 @@ public class Main {
         Boolean status = false;
 
         logStatus("Start TestCase",
-                "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly ",
+                "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
                 "DONE");
         takeScreenshot(driver, "StartTestCase", "TestCase10");
 
         Register registration = new Register(driver);
         registration.navigateToRegisterPage();
         status = registration.registerUser("testUser", "abc@125", true);
+        logStatus("Step Success", "User Registration: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("TestCase 10",
-                    "Test Case Failure. Verify that the Privacy Policy, About Us are displayed correctly ",
+            logStatus("End TestCase",
+                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
                     "FAIL");
             takeScreenshot(driver, "Failure", "TestCase10");
             return false;
@@ -626,12 +660,13 @@ public class Main {
         Login login = new Login(driver);
         login.navigateToLoginPage();
         status = login.PerformLogin(lastGeneratedUserName, "abc@125");
+        logStatus("Step Success", "User Perform Login: ", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "User Perform Login Failed", status ? "PASS" : "FAIL");
-            takeScreenshot(driver, "Failure", "TestCase10");
             logStatus("End TestCase",
-                    "Test Case 10:    Verify that the Privacy Policy, About Us are displayed correctly ",
-                    status ? "PASS" : "FAIL");
+                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
+                    "FAIL");
+            takeScreenshot(driver, "Failure", "TestCase10");
             return false;
         }
 
@@ -642,28 +677,29 @@ public class Main {
 
         driver.findElement(By.linkText("Privacy policy")).click();
         status = driver.getCurrentUrl().equals(basePageURL);
+        logStatus("Step Success", "Verifying parent page URL didn't change on Privacy Policy link click", status ? "PASS" : "FAIL");
 
         if (!status) {
-            logStatus("Step Failure", "Verifying parent page url didn't change on privacy policy link click failed", status ? "PASS" : "FAIL");
-            takeScreenshot(driver, "Failure", "TestCase10");
             logStatus("End TestCase",
-                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly ",
-                    status ? "PASS" : "FAIL");
+                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
+                    "FAIL");
+            takeScreenshot(driver, "Failure", "TestCase10");
             return false;
         }
 
         Set<String> handles = driver.getWindowHandles();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[1]);
-        WebElement PrivacyPolicyHeading = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/h2"));
-        status = PrivacyPolicyHeading.getText().equals("Privacy Policy");
+        WebElement privacyPolicyHeading = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/h2"));
+        status = privacyPolicyHeading.getText().equals("Privacy Policy");
+        logStatus("Step Success", "Verifying new tab opened has Privacy Policy page heading", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "Verifying new tab opened has Privacy Policy page heading failed", status ? "PASS" : "FAIL");
-            takeScreenshot(driver, "Failure", "TestCase10");
-            logStatus("End TestCase",
-                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly ",
-                    status ? "PASS" : "FAIL");
             driver.close();
             driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
+            logStatus("End TestCase",
+                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
+                    "FAIL");
+            takeScreenshot(driver, "Failure", "TestCase10");
             return false;
         }
 
@@ -672,16 +708,17 @@ public class Main {
 
         handles = driver.getWindowHandles();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[2]);
-        WebElement TOSHeading = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/h2"));
-        status = TOSHeading.getText().equals("Terms of Service");
+        WebElement tosHeading = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/h2"));
+        status = tosHeading.getText().equals("Terms of Service");
+        logStatus("Step Success", "Verifying new tab opened has Terms Of Service page heading", status ? "PASS" : "FAIL");
+
         if (!status) {
-            logStatus("Step Failure", "Verifying new tab opened has Terms Of Service page heading failed", status ? "PASS" : "FAIL");
-            takeScreenshot(driver, "Failure", "TestCase10");
-            logStatus("End TestCase",
-                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly ",
-                    status ? "PASS" : "FAIL");
             driver.close();
             driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
+            logStatus("End TestCase",
+                    "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
+                    "FAIL");
+            takeScreenshot(driver, "Failure", "TestCase10");
             return false;
         }
 
@@ -690,7 +727,7 @@ public class Main {
         driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
 
         logStatus("End TestCase",
-                "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly ",
+                "Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly",
                 "PASS");
         takeScreenshot(driver, "EndTestCase", "TestCase10");
 

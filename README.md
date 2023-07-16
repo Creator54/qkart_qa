@@ -3,7 +3,7 @@ The project covers different scenarios to validate the functionality and behavio
 
 ## Test Cases
 <details>
-<summary><b>TestCase01: Verify User Registration with valid credentials</b></summary>
+<summary><b>Test Case 1: Verify User Registration and Login | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -29,7 +29,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase02: Verify User Registration with an existing username</b></summary>
+<summary><b>Test Case 2: Verify if user Reregistration using the same username is not allowed | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -53,7 +53,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase03: Verify Login with valid credentials</b></summary>
+<summary><b>Test Case 3: Verify functionality of the search box | FAIL</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -75,7 +75,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase04: Verify Login with invalid credentials</b></summary>
+<summary><b>Test Case 4: Verify the presence of Size Chart | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -105,7 +105,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase05: Verify Happy Flow of buying products</b></summary>
+<summary><b>Test Case 5: Happy Flow Test Completed | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -130,7 +130,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase06: Verify that cart can be edited</b></summary>
+<summary><b>Test Case 6: Verify that cart can be edited | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -155,7 +155,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase07: Verify that cart contents are persisted after logout</b></summary>
+<summary><b>Test Case 7: Verify that cart contents are persisted after logout | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -181,7 +181,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase08: Verify that insufficient balance error is thrown when the wallet balance is not enough</b></summary>
+<summary><b>Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -206,7 +206,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase09: Verify that product added to cart is available when a new tab is opened</b></summary>
+<summary><b>Test Case 9: Verify that product added to cart is available when a new tab is opened | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -231,7 +231,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase10: Verify that the Privacy Policy, About Us are displayed correctly</b></summary>
+<summary><b>Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -257,7 +257,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase11: Verify that contact us option is working correctly</b></summary>
+<summary><b>Test Case 11: Verify that contact us option is working correctly  | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -281,7 +281,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>TestCase12: Ensure that the links on the QKART advertisement are clickable</b></summary>
+<summary><b>Test Case 12:  Ensure that the links on the QKART advertisement are clickable | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>

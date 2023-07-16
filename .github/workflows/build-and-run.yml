@@ -29,11 +29,11 @@ jobs:
         uses: isbang/compose-action@v1.4.1
 
       - name: Build with Gradle
-        run: ./joke.sh
+        run: ./gradlew run
 
       - name: Commit files
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -am "Verify Selenium success with CI/CD"
+          git commit -am "Validated TestCases on CI"
           git push
