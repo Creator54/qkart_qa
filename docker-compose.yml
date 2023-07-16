@@ -5,9 +5,9 @@ services:
     ports:
       - 4444:4444
       - 7900:7900
-    mem_limit: 2g
-    memswap_limit: 2g
-
+    volumes:
+      - /dev/shm:/dev/shm
+    
   test-runner:
     build:
       context: .
