@@ -3,7 +3,8 @@ The project covers different scenarios to validate the functionality and behavio
 
 ## Test Cases
 <details>
-<summary>TestCase01: Verify User Registration with valid credentials</summary>
+<summary><b>TestCase01: Verify User Registration with valid credentials</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -24,10 +25,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase01_StartTestCase.png](./screenshots/TestCase01_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase02: Verify User Registration with an existing username</summary>
+<summary><b>TestCase02: Verify User Registration with an existing username</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -46,10 +49,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase02_StartTestCase.png](./screenshots/TestCase02_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase03: Verify Login with valid credentials</summary>
+<summary><b>TestCase03: Verify Login with valid credentials</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -66,10 +71,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase03_StartTestCase.png](./screenshots/TestCase03_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase04: Verify Login with invalid credentials</summary>
+<summary><b>TestCase04: Verify Login with invalid credentials</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -94,10 +101,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase04_StartTestCase.png](./screenshots/TestCase04_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase05: Verify Happy Flow of buying products</summary>
+<summary><b>TestCase05: Verify Happy Flow of buying products</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -117,10 +126,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase05_StartTestCase.png](./screenshots/TestCase05_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase06: Verify that cart can be edited</summary>
+<summary><b>TestCase06: Verify that cart can be edited</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -140,10 +151,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase06_StartTestCase.png](./screenshots/TestCase06_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase07: Verify that cart contents are persisted after logout</summary>
+<summary><b>TestCase07: Verify that cart contents are persisted after logout</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -164,10 +177,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase07_StartTestCase.png](./screenshots/TestCase07_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase08: Verify that insufficient balance error is thrown when the wallet balance is not enough</summary>
+<summary><b>TestCase08: Verify that insufficient balance error is thrown when the wallet balance is not enough</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -187,10 +202,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase08_StartTestCase.png](./screenshots/TestCase08_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase09: Verify that product added to cart is available when a new tab is opened</summary>
+<summary><b>TestCase09: Verify that product added to cart is available when a new tab is opened</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -210,10 +227,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase09_StartTestCase.png](./screenshots/TestCase09_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase10: Verify that the Privacy Policy, About Us are displayed correctly</summary>
+<summary><b>TestCase10: Verify that the Privacy Policy, About Us are displayed correctly</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -234,10 +253,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase10_StartTestCase.png](./screenshots/TestCase10_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase11: Verify that contact us option is working correctly</summary>
+<summary><b>TestCase11: Verify that contact us option is working correctly</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -256,10 +277,12 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase11_StartTestCase.png](./screenshots/TestCase11_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 
 <details>
-<summary>TestCase12: Ensure that the links on the QKART advertisement are clickable</summary>
+<summary><b>TestCase12: Ensure that the links on the QKART advertisement are clickable</b></summary>
+<ul>
 <details>
 <summary>Details</summary>
 
@@ -280,5 +303,6 @@ The project covers different scenarios to validate the functionality and behavio
 ![TestCase12_StartTestCase.png](./screenshots/TestCase12_StartTestCase.png)
 
 </details>
+</ul>
 </details>
 

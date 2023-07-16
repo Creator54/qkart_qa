@@ -4,8 +4,8 @@ import os
 import re
 
 def generate_testcase_entry(testcase_number, testcase_name, description):
-    entry = f"<details>\n<summary>TestCase{testcase_number:02d}: {testcase_name}</summary>\n"
-    entry += "<details>\n<summary>Details</summary>\n\n"
+    entry = f"<details>\n<summary><b>TestCase{testcase_number:02d}: {testcase_name}</b></summary>\n"
+    entry += "<ul>\n<details>\n<summary>Details</summary>\n\n"
     entry += f"{description}\n</details>\n"
     entry += "<details>\n<summary>Screenshots</summary>\n\n"
 
@@ -19,7 +19,7 @@ def generate_testcase_entry(testcase_number, testcase_name, description):
     for screenshot in screenshots:
         entry += f"![{screenshot}](./screenshots/{screenshot})\n\n"
 
-    entry += "</details>\n</details>\n\n"
+    entry += "</details>\n</ul>\n</details>\n\n"
     return entry
 
 
