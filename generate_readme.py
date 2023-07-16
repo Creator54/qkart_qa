@@ -17,7 +17,7 @@ def generate_testcase_entry(testcase_number, testcase_name, description):
 
     # Add the screenshots to the entry with relative paths
     for screenshot in screenshots:
-        entry += f"![{screenshot}]('./screenshots/{screenshot}')\n\n"
+        entry += f"![{screenshot}](./screenshots/{screenshot})\n\n"
 
     entry += "</details>\n</details>\n\n"
     return entry

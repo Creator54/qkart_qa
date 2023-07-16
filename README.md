@@ -17,11 +17,11 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase01_Login_Passed.png]('./screenshots/TestCase01_Login_Passed.png')
+![TestCase01_Login_Passed.png](./screenshots/TestCase01_Login_Passed.png)
 
-![TestCase01_Registration_Passed.png]('./screenshots/TestCase01_Registration_Passed.png')
+![TestCase01_Registration_Passed.png](./screenshots/TestCase01_Registration_Passed.png)
 
-![TestCase01_StartTestCase.png]('./screenshots/TestCase01_StartTestCase.png')
+![TestCase01_StartTestCase.png](./screenshots/TestCase01_StartTestCase.png)
 
 </details>
 </details>
@@ -41,9 +41,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase02_Reregistration_Blocked.png]('./screenshots/TestCase02_Reregistration_Blocked.png')
+![TestCase02_Reregistration_Blocked.png](./screenshots/TestCase02_Reregistration_Blocked.png)
 
-![TestCase02_StartTestCase.png]('./screenshots/TestCase02_StartTestCase.png')
+![TestCase02_StartTestCase.png](./screenshots/TestCase02_StartTestCase.png)
 
 </details>
 </details>
@@ -63,7 +63,7 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase03_StartTestCase.png]('./screenshots/TestCase03_StartTestCase.png')
+![TestCase03_StartTestCase.png](./screenshots/TestCase03_StartTestCase.png)
 
 </details>
 </details>
@@ -83,15 +83,15 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase04_SizeChart_Closed.png]('./screenshots/TestCase04_SizeChart_Closed.png')
+![TestCase04_SizeChart_Closed.png](./screenshots/TestCase04_SizeChart_Closed.png)
 
-![TestCase04_SizeChart_Opened.png]('./screenshots/TestCase04_SizeChart_Opened.png')
+![TestCase04_SizeChart_Opened.png](./screenshots/TestCase04_SizeChart_Opened.png)
 
-![TestCase04_SizeChart_Presence.png]('./screenshots/TestCase04_SizeChart_Presence.png')
+![TestCase04_SizeChart_Presence.png](./screenshots/TestCase04_SizeChart_Presence.png)
 
-![TestCase04_SizeChart_Validated.png]('./screenshots/TestCase04_SizeChart_Validated.png')
+![TestCase04_SizeChart_Validated.png](./screenshots/TestCase04_SizeChart_Validated.png)
 
-![TestCase04_StartTestCase.png]('./screenshots/TestCase04_StartTestCase.png')
+![TestCase04_StartTestCase.png](./screenshots/TestCase04_StartTestCase.png)
 
 </details>
 </details>
@@ -112,9 +112,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase05_HappyFlow_Verified.png]('./screenshots/TestCase05_HappyFlow_Verified.png')
+![TestCase05_HappyFlow_Verified.png](./screenshots/TestCase05_HappyFlow_Verified.png)
 
-![TestCase05_StartTestCase.png]('./screenshots/TestCase05_StartTestCase.png')
+![TestCase05_StartTestCase.png](./screenshots/TestCase05_StartTestCase.png)
 
 </details>
 </details>
@@ -135,9 +135,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase06_Cart_Edit_Verified.png]('./screenshots/TestCase06_Cart_Edit_Verified.png')
+![TestCase06_Cart_Edit_Verified.png](./screenshots/TestCase06_Cart_Edit_Verified.png)
 
-![TestCase06_StartTestCase.png]('./screenshots/TestCase06_StartTestCase.png')
+![TestCase06_StartTestCase.png](./screenshots/TestCase06_StartTestCase.png)
 
 </details>
 </details>
@@ -159,9 +159,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase07_Cart_Contents_Persisted.png]('./screenshots/TestCase07_Cart_Contents_Persisted.png')
+![TestCase07_Cart_Contents_Persisted.png](./screenshots/TestCase07_Cart_Contents_Persisted.png)
 
-![TestCase07_StartTestCase.png]('./screenshots/TestCase07_StartTestCase.png')
+![TestCase07_StartTestCase.png](./screenshots/TestCase07_StartTestCase.png)
 
 </details>
 </details>
@@ -182,9 +182,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase08_Insufficient_Balance_Error.png]('./screenshots/TestCase08_Insufficient_Balance_Error.png')
+![TestCase08_Insufficient_Balance_Error.png](./screenshots/TestCase08_Insufficient_Balance_Error.png)
 
-![TestCase08_StartTestCase.png]('./screenshots/TestCase08_StartTestCase.png')
+![TestCase08_StartTestCase.png](./screenshots/TestCase08_StartTestCase.png)
 
 </details>
 </details>
@@ -205,9 +205,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase09_EndTestCase.png]('./screenshots/TestCase09_EndTestCase.png')
+![TestCase09_EndTestCase.png](./screenshots/TestCase09_EndTestCase.png)
 
-![TestCase09_StartTestCase.png]('./screenshots/TestCase09_StartTestCase.png')
+![TestCase09_StartTestCase.png](./screenshots/TestCase09_StartTestCase.png)
 
 </details>
 </details>
@@ -229,9 +229,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase10_EndTestCase.png]('./screenshots/TestCase10_EndTestCase.png')
+![TestCase10_EndTestCase.png](./screenshots/TestCase10_EndTestCase.png)
 
-![TestCase10_StartTestCase.png]('./screenshots/TestCase10_StartTestCase.png')
+![TestCase10_StartTestCase.png](./screenshots/TestCase10_StartTestCase.png)
 
 </details>
 </details>
@@ -251,9 +251,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase11_EndTestCase.png]('./screenshots/TestCase11_EndTestCase.png')
+![TestCase11_EndTestCase.png](./screenshots/TestCase11_EndTestCase.png)
 
-![TestCase11_StartTestCase.png]('./screenshots/TestCase11_StartTestCase.png')
+![TestCase11_StartTestCase.png](./screenshots/TestCase11_StartTestCase.png)
 
 </details>
 </details>
@@ -275,9 +275,9 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Screenshots</summary>
 
-![TestCase12_EndTestCase.png]('./screenshots/TestCase12_EndTestCase.png')
+![TestCase12_EndTestCase.png](./screenshots/TestCase12_EndTestCase.png)
 
-![TestCase12_StartTestCase.png]('./screenshots/TestCase12_StartTestCase.png')
+![TestCase12_StartTestCase.png](./screenshots/TestCase12_StartTestCase.png)
 
 </details>
 </details>
