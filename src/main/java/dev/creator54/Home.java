@@ -80,7 +80,7 @@ public class Home {
     public Boolean isNoResultFound() {
         Boolean status = false;
         try {
-            status = wait.until(ExpectedConditions.visibilityOfElementLocated (By.xpath ("//*[@id=\"root\"]/div/div/div[5]/div[1]/div[2]/div/h4"))).isDisplayed();
+            status = wait.until(ExpectedConditions.visibilityOfElementLocated (By.xpath ("//*[@id=\"root\"]/div/div/div[3]/div[1]/div[2]/div/h4"))).isDisplayed();
             return status;
         } catch (Exception e) {
             return status;

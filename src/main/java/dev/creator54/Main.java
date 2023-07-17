@@ -186,6 +186,7 @@ public class Main {
         if (searchResults.size() == 0) {
             if (homePage.isNoResultFound()) {
                 logStatus("Test Step", "Successfully validated that no products found message is displayed", "PASS");
+                status = true;
             }
         } else {
             takeScreenshot(driver, "Results_Available", "TestCase03");
