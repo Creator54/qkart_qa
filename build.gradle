@@ -23,9 +23,6 @@ dependencies {
 task run(type: JavaExec) {
     main = 'dev.creator54.Main'
     classpath = sourceSets.main.runtimeClasspath
-
-    // Add the following line to redirect the output to "logs.txt"
-    standardOutput = new FileOutputStream(file('logs.txt'))
 }
 
 task cleanup(type: Exec){

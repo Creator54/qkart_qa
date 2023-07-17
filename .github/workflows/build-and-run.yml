@@ -34,7 +34,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          ./gradlew run
+          ./gradlew run | tee logs.txt
           ./generate_readme.py
 
       - name: Commit files
