@@ -165,6 +165,17 @@ The project covers different scenarios to validate the functionality and behavio
     for testcase_number, testcase_name, description in test_cases:
         readme_content += generate_testcase_entry(testcase_number, testcase_name, description)
 
+
+    # conclude with total passed TestCases.
+    readme_content +="""\
+## Results
+
+"""
+    grep_command = "grep -e \"test cases Passed\" logs.txt"
+    output = subprocess.check_output(grep_command, shell=True, text=True)
+
+    readme_content+=output
+
     with open("README.md", "w") as readme_file:
         readme_file.write(readme_content)
 
