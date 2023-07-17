@@ -8,12 +8,15 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Details</summary>
 
-- **Objective**: To verify that a new user can successfully register with valid credentials.
+- **Objective**: To verify that a new user can successfully register and login with valid credentials.
 - **Steps**:
-  1. Navigate to the registration page.
-  2. Enter valid user details (username, password, etc.).
-  3. Click on the registration button.
-  4. Verify if the registration is successful and the user is redirected to the home page.
+  1. Navigate to the user Registration page of QKart
+  2. Enter the username and password
+  3. Enter the confirm password
+  4. Click on the Register button
+  5. Navigate to the Login page
+  6. Login with the the newly created user credentials
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -36,10 +39,11 @@ The project covers different scenarios to validate the functionality and behavio
 
 - **Objective**: To verify that the registration process prevents using an existing username.
 - **Steps**:
-  1. Navigate to the registration page.
-  2. Enter an existing username and valid credentials.
-  3. Click on the registration button.
-  4. Verify if the registration fails and displays an appropriate error message.
+  1. Navigate to the Registration page of QKart
+  2. Enter the user name of an existing user
+  3. Enter password and confirm password
+  4. Click on the Register button
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -58,12 +62,14 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Details</summary>
 
-- **Objective**: To verify that a registered user can login with valid credentials.
+- **Objective**: To verify that All results displayed on the page should contain the name 'yonex'', There should be a 'No products found' message
 - **Steps**:
-  1. Navigate to the login page.
-  2. Enter valid username and password.
-  3. Click on the login button.
-  4. Verify if the login is successful and the user is redirected to the home page.
+  1. Navigate to home page
+  2. Search for text : 'yonex' in the search box
+  3. Ensure that the results shown contain the search text in their name
+  4. Search for text: 'Gesundheit'
+  5. Ensure that no products found message is displayed
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -80,12 +86,15 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Details</summary>
 
-- **Objective**: To verify that the login process fails with invalid credentials.
+- **Objective**: Size chart Link should be present, On Click  the size chart should be displayed, The contents of the size chart are correct, The Size Selection drop down must be present for items with size chart, Each size present in the size selection dropdown must have corresponding entry on the size chart
 - **Steps**:
-  1. Navigate to the login page.
-  2. Enter invalid username and password.
-  3. Click on the login button.
-  4. Verify if the login fails and an appropriate error message is displayed.
+  1. Navigate to home page
+  2. Search for text: 'UNIFACTOR Mens Running Shoes'
+  3. Verify that the Size Chart Link Exists
+  4. Click on the size chart link and check the contents of the size chart
+  5. Verify the existence of size selection drop down
+  6. Ensure each size present in the size selection dropdown has corresponding reference on the size chart
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -110,13 +119,17 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Details</summary>
 
-- **Objective**: To verify the happy flow of buying products from the website.
+- **Objective**: To verify the The user is re-directed to the checkout page, The contents of the cart on the checkout page should be correct, The user should be redirect to the order success page, Order successful message should be displayed
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Add products to the cart.
-  4. Go to the checkout page and place the order.
-  5. Verify if the order is placed successfully.
+  1. Register a new user
+  2. Login using this new user
+  3. Add the following products in to the cart 'YONEX Smash Badminton Racquet x 1', 'Tan Leatherette Weekender Duffle x1'
+  4. Click on Checkout
+  5. Add a new address
+  6. Select the added address using radio button
+  7. Click on Place order
+  8 . Ensure that the order is placed
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -135,13 +148,16 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Details</summary>
 
-- **Objective**: To verify that the cart can be edited by adding/removing products.
+- **Objective**: To verify that the The Cart on the checkout page should contain the following items 'The Minimalist Slim Leather Watch x1'
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Add products to the cart.
-  4. Update the quantity of products in the cart.
-  5. Verify if the cart is updated accordingly.
+  1. Navigate to the home page
+  2. Add the follwing products to the cart 'The Minimalist Slim Leather Watch x2', 'Bonsai Spirit Tree Table Lamp x1'
+  3. Remove 1 Qty of The Minimalist Slim Leather Watch from the cart
+  4. Remove 1 Qty of Bonsai Spirit Tree Table Lamp from the cart
+  5. Click on Checkout
+  6. Verify the contents of cart on the checkout page
+  7. Log out
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -160,14 +176,16 @@ The project covers different scenarios to validate the functionality and behavio
 <details>
 <summary>Details</summary>
 
-- **Objective**: To verify that the cart contents are persisted even after the user logs out.
+- **Objective**: To verify that the The Checkout button must be present as there are items already added to the cart, The contents of the cart must be 'Stylecon 9 Seater RHS Sofa Set x1', 'The Minimalist Slim Leather Watch x3'
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Add products to the cart.
-  4. Log out the user.
-  5. Log in again with the same user's credentials.
-  6. Verify if the cart contents are still present.
+1. Register a new user
+2. Login using the registered user
+3. Add the following items in the cart: 'Stylecon 9 Seater RHS Sofa Set x1', 'The Minimalist Slim Leather Watch x3'
+4. Logout
+5. Login using the same user
+6. Verify the existence of checkout button
+7. Verify the existence of the items added to cart
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -188,11 +206,15 @@ The project covers different scenarios to validate the functionality and behavio
 
 - **Objective**: To verify that an insufficient balance error is thrown when the wallet balance is not enough to place an order.
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Add products to the cart with a high quantity.
-  4. Go to the checkout page and place the order.
-  5. Verify if the insufficient balance error message is displayed.
+1. Register a new user
+2. Login using the registered user
+3. Add the following items in the cart 'Stylecon 9 Seater RHS Sofa Set x10'
+4. Check out
+5. Add a new address
+6. Select the added address using radio button
+7. Click on Place order
+8. Verify if the order is placed
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -213,11 +235,13 @@ The project covers different scenarios to validate the functionality and behavio
 
 - **Objective**: To verify that a product added to the cart is available when a new tab is opened.
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Add a product to the cart.
-  4. Open a new tab and navigate to the website.
-  5. Verify if the cart contents are still present.
+1. Register a new user
+2. Login with the newly created user
+3. Search for th e product 'YONEX Smash Badminton Racquet''
+4. Add the above mentioned product to the cart
+5. Open a new tab and go to the QKART home page
+6. Check if the product added in step 4 is present in the cart
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -238,12 +262,10 @@ The project covers different scenarios to validate the functionality and behavio
 
 - **Objective**: To verify that the Privacy Policy and About Us pages are displayed correctly.
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Click on the Privacy Policy link.
-  4. Verify if the Privacy Policy page is displayed correctly.
-  5. Click on the About Us link.
-  6. Verify if the About Us page is displayed correctly.
+1. Navigate to QKART page
+2. Click on the Privacy Policy Link
+3. Click on the about us Link
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -264,10 +286,11 @@ The project covers different scenarios to validate the functionality and behavio
 
 - **Objective**: To verify that the Contact Us option is working correctly.
 - **Steps**:
-  1. Navigate to the Contact Us page.
-  2. Enter name, email, and message.
-  3. Click on the Contact Us button.
-  4. Verify if the Contact Us form submission is successful.
+1. Navigate to QKART page
+2. Click on the contact us link
+3. Update the contact us details
+4. Click on close
+
 </details>
 <details>
 <summary>Screenshots</summary>
@@ -288,12 +311,13 @@ The project covers different scenarios to validate the functionality and behavio
 
 - **Objective**: To ensure that the links on the QKART advertisement are clickable.
 - **Steps**:
-  1. Register a new user.
-  2. Login with the newly registered user's credentials.
-  3. Add a product to the cart.
-  4. Go to the checkout page and place the order.
-  5. Verify if the QKART advertisements are displayed.
-  6. Verify if the links on the QKART advertisements are clickable.
+1. Navigate to QKART page
+2. Register a new user
+3. Login using the registered user
+4. Search for product: 'YONEX Smash Badminton Racquet'
+5. Buy the product
+6. In the last page, check if the advertisement links are clickable
+
 </details>
 <details>
 <summary>Screenshots</summary>
