@@ -33,7 +33,9 @@ jobs:
         uses: isbang/compose-action@v1.4.1
 
       - name: Build with Gradle
-        run: ./gradlew run
+        run: |
+          ./gradlew run
+          ./generate_readme.py
 
       - name: Commit files
         run: |

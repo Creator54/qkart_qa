@@ -40,17 +40,6 @@ task vncURL(type: Exec){
     commandLine 'echo', 'VNC URL: http://localhost:7900/?autoconnect=1&password=secret&resize=scale'
 }
 
-task runWithScript(dependsOn: run) {
-    doLast {
-        exec {
-            commandLine './generate_readme.py'
-        }
-    }
-}
-
 tasks.dockerSetup.dependsOn cleanup
 tasks.vncURL.dependsOn dockerSetup
 tasks.run.dependsOn vncURL
-
-// This ensures the runWithScript task runs after the run task is finished
-runWithScript.mustRunAfter run
