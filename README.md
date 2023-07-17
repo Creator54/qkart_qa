@@ -57,7 +57,7 @@ The project covers different scenarios to validate the functionality and behavio
 </details>
 
 <details>
-<summary><b>Test Case 3: Verify functionality of the search box | FAIL</b></summary>
+<summary><b>Test Case 3: Verify functionality of the search box | PASS</b></summary>
 <ul>
 <details>
 <summary>Details</summary>
@@ -332,4 +332,4 @@ The project covers different scenarios to validate the functionality and behavio
 
 ## Results
 
-11 out of 12 test cases Passed 
+12 out of 12 test cases Passed 
