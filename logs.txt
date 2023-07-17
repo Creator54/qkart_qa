@@ -1,79 +1,79 @@
-2023-07-17T00:23:35.243008613 |  Start TestCase  |  Test Case 1: Verify User Registration and Login | DONE
-2023-07-17T00:23:38.143378434 |  TestCase 1  |  Test Case 1: User Registration Passed | PASS
-2023-07-17T00:23:38.854598158 |  Test Step  |  Test Case 1: User Perform Login | PASS
-2023-07-17T00:23:39.706681299 |  End TestCase  |  Test Case 1: Verify User Registration and Login | PASS
+2023-07-17T00:32:55.130456708 |  Start TestCase  |  Test Case 1: Verify User Registration and Login | DONE
+2023-07-17T00:32:58.368046250 |  TestCase 1  |  Test Case 1: User Registration Passed | PASS
+2023-07-17T00:32:59.077929311 |  Test Step  |  Test Case 1: User Perform Login | PASS
+2023-07-17T00:33:00.197999344 |  End TestCase  |  Test Case 1: Verify User Registration and Login | PASS
 
-2023-07-17T00:23:40.260233719 |  Start TestCase  |  Test Case 2: Verify User Registration with an existing username | DONE
-2023-07-17T00:23:41.646059580 |  Test Step  |  Test Case 2: User Registration | PASS
-2023-07-17T00:24:03.459840163 |  End TestCase  |  Test Case 2: Verify if user Reregistration using the same username is not allowed | PASS
+2023-07-17T00:33:00.625304376 |  Start TestCase  |  Test Case 2: Verify User Registration with an existing username | DONE
+2023-07-17T00:33:02.717333763 |  Test Step  |  Test Case 2: User Registration | PASS
+2023-07-17T00:33:24.458161621 |  End TestCase  |  Test Case 2: Verify if user Reregistration using the same username is not allowed | PASS
 
-2023-07-17T00:24:03.966289349 |  Start TestCase  |  Test Case 3: Verify functionality of the search box | DONE
-2023-07-17T00:24:06.764497983 |  Test Step  |  Successfully validated the search results | PASS
-2023-07-17T00:24:38.987899080 |  End TestCase  |  Test Case 3: Verify functionality of the search box | FAIL
+2023-07-17T00:33:24.943684077 |  Start TestCase  |  Test Case 3: Verify functionality of the search box | DONE
+2023-07-17T00:33:27.684982814 |  Test Step  |  Successfully validated the search results | PASS
+2023-07-17T00:33:59.956800771 |  End TestCase  |  Test Case 3: Verify functionality of the search box | FAIL
 
-2023-07-17T00:24:39.361711596 |  Start TestCase  |  Test Case 4: Verify the presence of Size Chart | DONE
-2023-07-17T00:24:44.684002826 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
-2023-07-17T00:24:44.736903850 |  Step Success  |  Validated presence of drop down | PASS
-2023-07-17T00:24:46.156291304 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
-2023-07-17T00:24:59.679078593 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
-2023-07-17T00:24:59.725037724 |  Step Success  |  Validated presence of drop down | PASS
-2023-07-17T00:25:01.135811301 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
-2023-07-17T00:25:12.145769731 |  End TestCase  |  Test Case 4: Verify the presence of Size Chart | PASS
+2023-07-17T00:34:00.338643063 |  Start TestCase  |  Test Case 4: Verify the presence of Size Chart | DONE
+2023-07-17T00:34:05.401305011 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
+2023-07-17T00:34:05.461169196 |  Step Success  |  Validated presence of drop down | PASS
+2023-07-17T00:34:06.852168363 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
+2023-07-17T00:34:20.346414668 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
+2023-07-17T00:34:20.396398943 |  Step Success  |  Validated presence of drop down | PASS
+2023-07-17T00:34:21.780389354 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
+2023-07-17T00:34:32.795483968 |  End TestCase  |  Test Case 4: Verify the presence of Size Chart | PASS
 
-2023-07-17T00:25:12.950548801 |  Start TestCase  |  Test Case 5: Verify Happy Flow of buying products | DONE
-2023-07-17T00:25:14.177685803 |  Step Success  |  User Registration:  | PASS
-2023-07-17T00:25:14.868614382 |  Step Success  |  User Perform Login:  | PASS
-2023-07-17T00:25:21.809840795 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
-2023-07-17T00:25:22.387359442 |  End TestCase  |  Test Case 5: Happy Flow Test Completed | PASS
+2023-07-17T00:34:33.635890515 |  Start TestCase  |  Test Case 5: Verify Happy Flow of buying products | DONE
+2023-07-17T00:34:34.909266858 |  Step Success  |  User Registration:  | PASS
+2023-07-17T00:34:35.745539146 |  Step Success  |  User Perform Login:  | PASS
+2023-07-17T00:34:43.752000929 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
+2023-07-17T00:34:44.350698452 |  End TestCase  |  Test Case 5: Happy Flow Test Completed | PASS
 
-2023-07-17T00:25:23.330507208 |  Start TestCase  |  Test Case 6: Verify that cart can be edited | DONE
-2023-07-17T00:25:24.568845351 |  Step Success  |  User Registration:  | PASS
-2023-07-17T00:25:25.407944255 |  Step Success  |  User Perform Login:  | PASS
-2023-07-17T00:25:33.396594194 |  Step Success  |  Updated quantity of Xtend Smart Watch to 2 | PASS
-2023-07-17T00:25:33.485254748 |  Step Success  |  Updated quantity of Yarine Floor Lamp to 0 | PASS
-2023-07-17T00:25:35.639836467 |  Step Success  |  Updated quantity of Xtend Smart Watch to 1 | PASS
-2023-07-17T00:25:37.305670888 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
-2023-07-17T00:25:38.060295538 |  End TestCase  |  Test Case 6: Verify that cart can be edited | PASS
+2023-07-17T00:34:45.238466137 |  Start TestCase  |  Test Case 6: Verify that cart can be edited | DONE
+2023-07-17T00:34:46.490043271 |  Step Success  |  User Registration:  | PASS
+2023-07-17T00:34:47.224335928 |  Step Success  |  User Perform Login:  | PASS
+2023-07-17T00:34:55.405823644 |  Step Success  |  Updated quantity of Xtend Smart Watch to 2 | PASS
+2023-07-17T00:34:55.502357401 |  Step Success  |  Updated quantity of Yarine Floor Lamp to 0 | PASS
+2023-07-17T00:34:57.660313216 |  Step Success  |  Updated quantity of Xtend Smart Watch to 1 | PASS
+2023-07-17T00:34:59.410766013 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
+2023-07-17T00:34:59.982834424 |  End TestCase  |  Test Case 6: Verify that cart can be edited | PASS
 
-2023-07-17T00:25:38.985315362 |  Start TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | DONE
-2023-07-17T00:25:40.328507824 |  Step Success  |  User Registration:  | PASS
-2023-07-17T00:25:41.092492858 |  Step Success  |  User Perform Login:  | PASS
-2023-07-17T00:25:44.186328713 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
-2023-07-17T00:25:46.826901921 |  Step Success  |  Added 'Xtend Smart Watch' to the cart | PASS
-2023-07-17T00:25:48.280236242 |  Step Success  |  User Perform Login after Logout:  | PASS
-2023-07-17T00:25:48.770237421 |  Step Success  |  Cart Contents Persisted after Logout:  | PASS
-2023-07-17T00:25:48.770381421 |  End TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | PASS
+2023-07-17T00:35:01.079020213 |  Start TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | DONE
+2023-07-17T00:35:02.842847249 |  Step Success  |  User Registration:  | PASS
+2023-07-17T00:35:03.878724481 |  Step Success  |  User Perform Login:  | PASS
+2023-07-17T00:35:06.990343335 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
+2023-07-17T00:35:09.524709923 |  Step Success  |  Added 'Xtend Smart Watch' to the cart | PASS
+2023-07-17T00:35:10.969000987 |  Step Success  |  User Perform Login after Logout:  | PASS
+2023-07-17T00:35:11.342286763 |  Step Success  |  Cart Contents Persisted after Logout:  | PASS
+2023-07-17T00:35:11.342622760 |  End TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | PASS
 
-2023-07-17T00:25:49.421999324 |  Start TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | DONE
-2023-07-17T00:25:51.179745681 |  Step Success  |  User Registration:  | PASS
-2023-07-17T00:25:51.884749625 |  Step Success  |  User Perform Login:  | PASS
-2023-07-17T00:25:54.758375966 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
-2023-07-17T00:26:13.519203370 |  Step Success  |  Changed product quantity in the cart to 10 | PASS
-2023-07-17T00:26:18.436846974 |  Step Success  |  Verified that the insufficient balance error message is displayed | PASS
-2023-07-17T00:26:18.437245074 |  End TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | PASS
+2023-07-17T00:35:12.070065399 |  Start TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | DONE
+2023-07-17T00:35:13.827292541 |  Step Success  |  User Registration:  | PASS
+2023-07-17T00:35:14.517015346 |  Step Success  |  User Perform Login:  | PASS
+2023-07-17T00:35:17.234808965 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
+2023-07-17T00:35:35.969761752 |  Step Success  |  Changed product quantity in the cart to 10 | PASS
+2023-07-17T00:35:40.279180041 |  Step Success  |  Verified that the insufficient balance error message is displayed | PASS
+2023-07-17T00:35:40.279519038 |  End TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | PASS
 
-2023-07-17T00:26:18.562804631 |  Start TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | DONE
-2023-07-17T00:26:19.936146652 |  Step Success  |  User Registration:  | PASS
-2023-07-17T00:26:20.808418746 |  Step Success  |  User Perform Login:  | PASS
-2023-07-17T00:26:23.993982186 |  Step Success  |  Added 'YONEX Smash Badminton Racquet' to the cart | PASS
-2023-07-17T00:26:24.919779104 |  Step Success  |  Verified that the cart contents are available in the new tab | PASS
-2023-07-17T00:26:24.989223535 |  End TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | PASS
+2023-07-17T00:35:40.407434674 |  Start TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | DONE
+2023-07-17T00:35:41.868671959 |  Step Success  |  User Registration:  | PASS
+2023-07-17T00:35:42.656413431 |  Step Success  |  User Perform Login:  | PASS
+2023-07-17T00:35:45.641114118 |  Step Success  |  Added 'YONEX Smash Badminton Racquet' to the cart | PASS
+2023-07-17T00:35:46.744939931 |  Step Success  |  Verified that the cart contents are available in the new tab | PASS
+2023-07-17T00:35:46.808135999 |  End TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | PASS
 
-2023-07-17T00:26:25.266608761 |  Start TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | DONE
-2023-07-17T00:26:27.262628474 |  Step Success  |  User Registration:  | PASS
-2023-07-17T00:26:27.959990381 |  Step Success  |  User Perform Login:  | PASS
-2023-07-17T00:26:28.470748179 |  Step Success  |  Verifying parent page URL didn't change on Privacy Policy link click | PASS
-2023-07-17T00:26:28.656914588 |  Step Success  |  Verifying new tab opened has Privacy Policy page heading | PASS
-2023-07-17T00:26:29.013310496 |  Step Success  |  Verifying new tab opened has Terms Of Service page heading | PASS
-2023-07-17T00:26:29.101479047 |  End TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | PASS
+2023-07-17T00:35:47.081619798 |  Start TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | DONE
+2023-07-17T00:35:48.656098551 |  Step Success  |  User Registration:  | PASS
+2023-07-17T00:35:49.284391464 |  Step Success  |  User Perform Login:  | PASS
+2023-07-17T00:35:49.677368975 |  Step Success  |  Verifying parent page URL didn't change on Privacy Policy link click | PASS
+2023-07-17T00:35:49.888145493 |  Step Success  |  Verifying new tab opened has Privacy Policy page heading | PASS
+2023-07-17T00:35:50.361609587 |  Step Success  |  Verifying new tab opened has Terms Of Service page heading | PASS
+2023-07-17T00:35:50.499152984 |  End TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | PASS
 
-2023-07-17T00:26:29.305200266 |  Start TestCase  |  Test Case 11: Verify that contact us option is working correctly  | DONE
-2023-07-17T00:26:30.914048905 |  End TestCase  |  Test Case 11: Verify that contact us option is working correctly  | PASS
+2023-07-17T00:35:50.795175343 |  Start TestCase  |  Test Case 11: Verify that contact us option is working correctly  | DONE
+2023-07-17T00:35:52.451170179 |  End TestCase  |  Test Case 11: Verify that contact us option is working correctly  | PASS
 
-2023-07-17T00:26:31.101964614 |  Start TestCase  |  Test Case 12: Ensure that the links on the QKART advertisement are clickable | DONE
-2023-07-17T00:26:39.427857762 |  Step   |  Verify that 3 Advertisements are available | PASS
-2023-07-17T00:26:39.611924944 |  Step   |  Verify that Advertisement 1 is clickable  | PASS
-2023-07-17T00:26:40.042777996 |  Step   |  Verify that Advertisement 2 is clickable  | PASS
-2023-07-17T00:26:40.042866296 |  End TestCase  |  Test Case 12:  Ensure that the links on the QKART advertisement are clickable | PASS
+2023-07-17T00:35:52.647300093 |  Start TestCase  |  Test Case 12: Ensure that the links on the QKART advertisement are clickable | DONE
+2023-07-17T00:35:59.776373705 |  Step   |  Verify that 3 Advertisements are available | PASS
+2023-07-17T00:35:59.937158692 |  Step   |  Verify that Advertisement 1 is clickable  | PASS
+2023-07-17T00:36:00.297532148 |  Step   |  Verify that Advertisement 2 is clickable  | PASS
+2023-07-17T00:36:00.297622448 |  End TestCase  |  Test Case 12:  Ensure that the links on the QKART advertisement are clickable | PASS
 
 11 out of 12 test cases Passed 
