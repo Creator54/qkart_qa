@@ -330,3 +330,6 @@ The project covers different scenarios to validate the functionality and behavio
 </ul>
 </details>
 
+## Results
+
+11 out of 12 test cases Passed 
