@@ -22,7 +22,7 @@ start_services() {
 # Main script logic
 if ! check_services_running; then
 	start_services
-	sleep 3
+	sleep 10
 fi
 
 rm -rf ./screenshots/

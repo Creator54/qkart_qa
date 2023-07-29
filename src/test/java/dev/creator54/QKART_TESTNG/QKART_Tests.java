@@ -1,4 +1,8 @@
 package dev.creator54.QKART_TESTNG;
+import com.google.common.base.Verify;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import dev.creator54.QKART_TESTNG.pages.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -15,6 +19,8 @@ import java.util.Set;
 
 public class QKART_Tests {
     RemoteWebDriver  driver = null;
+    ExtentReportsSingleton  extentReportsSingleton = null;
+    ExtentTest test = null;
 
     @BeforeSuite(alwaysRun = true)
     public void createDriver() throws MalformedURLException {
@@ -22,11 +28,15 @@ public class QKART_Tests {
         driver = DriverSingleton.getInstance().getDriver ();
         driver.manage ().window ().maximize ();
         System.out.println("Driver Created");
+
+        extentReportsSingleton = new ExtentReportsSingleton ().getInstance();
+        test = extentReportsSingleton.getExtentTest ();
     }
 
     @AfterSuite(alwaysRun = true)
     public void closeDriver() {
         DriverSingleton.quitDriver();
+        extentReportsSingleton.endReport();
     }
 
     /*
@@ -57,6 +67,7 @@ public class QKART_Tests {
         Boolean logoutStatus = home.PerformLogout();
 
         Assert.assertTrue(logoutStatus, "Test Case 1: User Logout Failed");
+        test.log(LogStatus.PASS, "Testcase01 -> Verify the functionality of Login button on the Home page : Passed");
     }
 
     /*
@@ -86,6 +97,7 @@ public class QKART_Tests {
         Boolean logoutStatus = home.PerformLogout();
 
         Assert.assertTrue(logoutStatus, "Test Case 2: User Logout Failed");
+        test.log(LogStatus.PASS, "Testcase02 -> Verify that an existing user is not allowed to re-register on QKart : Passed");
     }
 
     /*
@@ -125,6 +137,7 @@ public class QKART_Tests {
         // Verify no search results are found
         searchResults = homePage.getSearchResults();
         Assert.assertTrue (searchResults.size ()==0," Test Case 03:  Results were found for invalid search !");
+        test.log(LogStatus.PASS, "Testcase03 -> Verify the functinality of the search text box : Passed");
     }
 
     /*
@@ -180,6 +193,7 @@ public class QKART_Tests {
             status = result.closeSizeChart(driver);
             Assert.assertTrue(status, "Step Failure: Failure to close Size Chart !");
 
+            test.log(LogStatus.PASS, "Testcase04 -> Verify the presence of size chart and check if the size chart content is as : Passed");
         }
     }
 
@@ -248,6 +262,7 @@ public class QKART_Tests {
 
         // The test case has passed if it has reached this point
         Assert.assertTrue(status, "Test Case 5: Happy Flow Test Completed !");
+        test.log(LogStatus.PASS, "Testcase05 -> Verify the complete flow of checking out and placing order for products is working correctly : Passed");
     }
 
 
@@ -318,6 +333,7 @@ public class QKART_Tests {
 
         // The test case has passed if it has reached this point
         Assert.assertTrue(status, "Test Case 6: Verify that cart can be edited !");
+        test.log(LogStatus.PASS, "Testcase06 -> Verify the quantity of items in cart can be updated : Passed");
     }
 
     /*
@@ -376,6 +392,7 @@ public class QKART_Tests {
 
         // The test case has passed if it has reached this point
         Assert.assertTrue(true, "Test Case 7: Verify that cart contents are persisted after logout !");
+        test.log(LogStatus.PASS, "Testcase07 -> Verify that the cart contents are persisted after logout : Passed");
     }
 
     @Test(description = "Verify that insufficient balance error is thrown when the wallet balance is not enough", priority = 8, groups = { "Sanity_Test" })
@@ -423,6 +440,7 @@ public class QKART_Tests {
         // Step 4: Verify if the insufficient balance error message is displayed
         status = checkoutPage.verifyInsufficientBalanceMessage();
         Assert.assertTrue(status, "Step Failure: Insufficient balance error message is not displayed !");
+        test.log(LogStatus.PASS, "Testcase08 -> Verify that insufficient balance error is thrown when the wallet balance is not enough : Passed");
     }
 
     @Test(description = "Verify that a product added to a cart is available when a new tab is added", priority = 10, dependsOnMethods = { "TestCase10" }, groups = { "Regression_Test" })
@@ -463,6 +481,7 @@ public class QKART_Tests {
 
         driver.close();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
+        test.log(LogStatus.PASS, "Testcase09 -> Verify that a product added to a cart is available when a new tab is added : Passed");
     }
 
 
@@ -510,6 +529,7 @@ public class QKART_Tests {
         driver.close();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[1]).close();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
+        test.log(LogStatus.PASS, "Testcase10 -> Verify that privacy policy and about us links are working fine : Passed");
     }
 
     @Test(description = "Verify that the contact us dialog works fine", priority = 11, groups = { "Regression_Test" })
@@ -534,6 +554,7 @@ public class QKART_Tests {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOf(contactUs));
+        test.log(LogStatus.PASS, "Testcase11 -> Verify that the contact us dialog works fine : Passed");
     }
 
 
@@ -587,5 +608,6 @@ public class QKART_Tests {
 
         driver.switchTo().parentFrame();
         driver.navigate().back();
+        test.log(LogStatus.PASS, "Testcase12 -> Ensure that the Advertisement Links on the QKART page are clickable : Passed");
     }
 }
