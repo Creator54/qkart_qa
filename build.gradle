@@ -18,25 +18,18 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+
+    // https://mvnrepository.com/artifact/org.testng/testng/7.5
+    testImplementation 'org.testng:testng:7.5'
+}
+
+task startScript(type:Exec) {
+    commandLine './selenium-run.sh'
 }
 
 task run(type: JavaExec) {
     main = 'dev.creator54.Main'
     classpath = sourceSets.main.runtimeClasspath
 }
+tasks.run.dependsOn startScript
 
-task cleanup(type: Exec){
-    commandLine 'rm','-rf','./screenshots'
-}
-
-task dockerSetup(type: Exec) {
-    commandLine 'docker-compose', 'up', '-d'
-}
-
-task vncURL(type: Exec){
-    commandLine 'echo', 'VNC URL: http://localhost:7900/?autoconnect=1&password=secret&resize=scale'
-}
-
-tasks.dockerSetup.dependsOn cleanup
-tasks.vncURL.dependsOn dockerSetup
-tasks.run.dependsOn vncURL
