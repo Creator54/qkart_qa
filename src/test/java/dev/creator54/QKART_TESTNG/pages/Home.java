@@ -1,4 +1,4 @@
-package dev.creator54;
+package dev.creator54.QKART_TESTNG.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -17,7 +17,8 @@ public class Home {
 
     public Home(RemoteWebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait (driver,Duration.ofSeconds (10));    }
+        wait = new WebDriverWait (driver,Duration.ofSeconds (10));
+    }
 
     public void navigateToHome() {
         if (!this.driver.getCurrentUrl().equals(this.url)) {
@@ -185,7 +186,7 @@ public class Home {
             WebElement cartParent = wait.until(ExpectedConditions.visibilityOfElementLocated (By.xpath ("//div[@class=\"cart MuiBox-root css-0\"]")));
             List<WebElement> cartContents = cartParent.findElements(By.className("css-zgtx0t"));
 
-            ArrayList<String> actualCartContents = new ArrayList<String>() {};
+            ArrayList<String> actualCartContents = new ArrayList<>() {};
 
             for (WebElement cartItem : cartContents) {
                 actualCartContents.add(cartItem.findElement(By.className("css-1gjj37g")).getText().split("\n")[0]);

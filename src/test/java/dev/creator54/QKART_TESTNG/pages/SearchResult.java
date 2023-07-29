@@ -1,4 +1,4 @@
-package dev.creator54;
+package dev.creator54.QKART_TESTNG.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
