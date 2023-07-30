@@ -9,11 +9,10 @@ services:
       - /dev/shm:/dev/shm
     
   test-runner:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: gradle:jdk17-alpine
     depends_on:
       - selenium-grid
+    working_dir: /app
     volumes:
       - ./:/app
     stop_grace_period: 5s
