@@ -4,6 +4,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import dev.creator54.QKART_TESTNG.pages.*;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.Duration;
 import java.util.Arrays;
@@ -39,12 +42,31 @@ public class QKART_Tests {
         extentReportsSingleton.endReport();
     }
 
-    /*
+    public static String takeScreenshot(WebDriver driver, String description, String testCaseName) {
+        try {
+            File screenshotsDir = new File("./screenshots");
+            if (!screenshotsDir.exists()) {
+                screenshotsDir.mkdirs();
+            }
+
+            String fileName = String.format("%s_%s.png", testCaseName, description);
+            File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File destFile = new File(screenshotsDir, fileName);
+            FileUtils.copyFile(srcFile, destFile);
+
+            return destFile.getAbsolutePath();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+     /*
      * Testcase01: Verify the functionality of Login button on the Home page
      */
     @Test(description="Verify registration happens correctly",priority = 1,groups = {"Sanity_Test"})
     @Parameters({"TC1_Username","TC1_Password"})
-    public void TestCase01(String username, String password) throws InterruptedException {
+    public void TestCase01(String username, String password) throws InterruptedException, IOException {
         // Step 1: User Registration
         Register registration = new Register(driver);
         registration.navigateToRegisterPage();
@@ -67,7 +89,7 @@ public class QKART_Tests {
         Boolean logoutStatus = home.PerformLogout();
 
         Assert.assertTrue(logoutStatus, "Test Case 1: User Logout Failed");
-        test.log(LogStatus.PASS, "Testcase01 -> Verify the functionality of Login button on the Home page : Passed");
+        test.log(LogStatus.PASS, "Testcase01 -> Verify the functionality of Login button on the Home page : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase01")));
     }
 
     /*
@@ -75,7 +97,7 @@ public class QKART_Tests {
      */
     @Test(description="Verify re-registering an already registered user fails",priority = 2,groups={"Sanity_Test"})
     @Parameters({"TC2_Username","TC2_Password"})
-    public void TestCase02(String username, String password) throws InterruptedException {
+    public void TestCase02(String username, String password) throws InterruptedException, IOException {
         // Step 1: User Registration
         Register registration = new Register(driver);
         registration.navigateToRegisterPage();
@@ -97,7 +119,7 @@ public class QKART_Tests {
         Boolean logoutStatus = home.PerformLogout();
 
         Assert.assertTrue(logoutStatus, "Test Case 2: User Logout Failed");
-        test.log(LogStatus.PASS, "Testcase02 -> Verify that an existing user is not allowed to re-register on QKart : Passed");
+        test.log(LogStatus.PASS, "Testcase02 -> Verify that an existing user is not allowed to re-register on QKart : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase02")));
     }
 
     /*
@@ -105,7 +127,7 @@ public class QKART_Tests {
      */
     @Test(description="Verify the functionality of search text box",priority = 3,groups={"Sanity_Test"})
     @Parameters("TC3_ProductNameToSearchFor")
-    public void TestCase03(String productName) throws InterruptedException {
+    public void TestCase03(String productName) throws InterruptedException, IOException {
         boolean status;
 
         // Visit the home page
@@ -137,7 +159,7 @@ public class QKART_Tests {
         // Verify no search results are found
         searchResults = homePage.getSearchResults();
         Assert.assertTrue (searchResults.size ()==0," Test Case 03:  Results were found for invalid search !");
-        test.log(LogStatus.PASS, "Testcase03 -> Verify the functinality of the search text box : Passed");
+        test.log(LogStatus.PASS, "Testcase03 -> Verify the functinality of the search text box : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase03")));
     }
 
     /*
@@ -146,7 +168,7 @@ public class QKART_Tests {
      */
     @Test(description = "Verify the existence of size chart for certain items and validate contents of size chart", priority = 4, groups = { "Regression_Test" })
     @Parameters("TC4_ProductNameToSearchFor")
-    public void TestCase04(String productName) throws InterruptedException {
+    public void TestCase04(String productName) throws InterruptedException, IOException {
         Boolean status = false;
 
         // Visit home page
@@ -193,8 +215,8 @@ public class QKART_Tests {
             status = result.closeSizeChart(driver);
             Assert.assertTrue(status, "Step Failure: Failure to close Size Chart !");
 
-            test.log(LogStatus.PASS, "Testcase04 -> Verify the presence of size chart and check if the size chart content is as : Passed");
         }
+        test.log(LogStatus.PASS, "Testcase04 -> Verify the presence of size chart and check if the size chart content is as : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase04")));
     }
 
     /*
@@ -204,7 +226,7 @@ public class QKART_Tests {
 
     @Test(description = "Verify that a new user can add multiple products in to the cart and Checkout", priority = 5, groups = { "Sanity_Test" })
     @Parameters({ "TC5_ProductNameToSearchFor", "TC5_ProductNameToSearchFor2", "TC5_AddressDetails" })
-    public void TestCase05(String productOne, String productTwo, String address) throws InterruptedException {
+    public void TestCase05(String productOne, String productTwo, String address) throws InterruptedException, IOException {
         Boolean status;
 
         // Step 1: Go to the Register page
@@ -262,7 +284,7 @@ public class QKART_Tests {
 
         // The test case has passed if it has reached this point
         Assert.assertTrue(status, "Test Case 5: Happy Flow Test Completed !");
-        test.log(LogStatus.PASS, "Testcase05 -> Verify the complete flow of checking out and placing order for products is working correctly : Passed");
+        test.log(LogStatus.PASS, "Testcase05 -> Verify the complete flow of checking out and placing order for products is working correctly : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase05")));
     }
 
 
@@ -271,7 +293,7 @@ public class QKART_Tests {
      */
     @Test(description = "Verify that the contents of the cart can be edited", priority = 6, groups = { "Regression_Test" })
     @Parameters({ "TC6_ProductNameToSearch1", "TC6_ProductNameToSearch2" })
-    public void TestCase06(String productOne, String productTwo) throws InterruptedException {
+    public void TestCase06(String productOne, String productTwo) throws InterruptedException, IOException {
         Boolean status;
 
         // Step 1: Navigate to the Register page
@@ -333,7 +355,7 @@ public class QKART_Tests {
 
         // The test case has passed if it has reached this point
         Assert.assertTrue(status, "Test Case 6: Verify that cart can be edited !");
-        test.log(LogStatus.PASS, "Testcase06 -> Verify the quantity of items in cart can be updated : Passed");
+        test.log(LogStatus.PASS, "Testcase06 -> Verify the quantity of items in cart can be updated : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase06")));
     }
 
     /*
@@ -342,7 +364,7 @@ public class QKART_Tests {
 
     @Test(description = "Verify that the contents made to the cart are saved against the user's login details", priority = 7, groups = { "Regression_Test" })
     @Parameters({ "TC7_ListOfProductsToAddToCart" })
-    public void TestCase07(String products) throws InterruptedException {
+    public void TestCase07(String products) throws InterruptedException, IOException {
         Boolean status = false;
         List<String> productsList = Arrays.asList(products.split (","));
         List<String> expectedResult = Arrays.asList(products.split (","));
@@ -392,12 +414,12 @@ public class QKART_Tests {
 
         // The test case has passed if it has reached this point
         Assert.assertTrue(true, "Test Case 7: Verify that cart contents are persisted after logout !");
-        test.log(LogStatus.PASS, "Testcase07 -> Verify that the cart contents are persisted after logout : Passed");
+        test.log(LogStatus.PASS, "Testcase07 -> Verify that the cart contents are persisted after logout : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase07")));
     }
 
     @Test(description = "Verify that insufficient balance error is thrown when the wallet balance is not enough", priority = 8, groups = { "Sanity_Test" })
     @Parameters({ "TC8_ProductName", "TC8_Qty" })
-    public void TestCase08(String productName, int quantity) throws InterruptedException {
+    public void TestCase08(String productName, int quantity) throws InterruptedException, IOException {
         Boolean status;
 
         Register registration = new Register(driver);
@@ -440,11 +462,11 @@ public class QKART_Tests {
         // Step 4: Verify if the insufficient balance error message is displayed
         status = checkoutPage.verifyInsufficientBalanceMessage();
         Assert.assertTrue(status, "Step Failure: Insufficient balance error message is not displayed !");
-        test.log(LogStatus.PASS, "Testcase08 -> Verify that insufficient balance error is thrown when the wallet balance is not enough : Passed");
+        test.log(LogStatus.PASS, "Testcase08 -> Verify that insufficient balance error is thrown when the wallet balance is not enough : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase08")));
     }
 
     @Test(description = "Verify that a product added to a cart is available when a new tab is added", priority = 10, dependsOnMethods = { "TestCase10" }, groups = { "Regression_Test" })
-    public void TestCase09() throws InterruptedException {
+    public void TestCase09() throws InterruptedException, IOException {
         Boolean status;
 
         Register registration = new Register(driver);
@@ -481,12 +503,12 @@ public class QKART_Tests {
 
         driver.close();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
-        test.log(LogStatus.PASS, "Testcase09 -> Verify that a product added to a cart is available when a new tab is added : Passed");
+        test.log(LogStatus.PASS, "Testcase09 -> Verify that a product added to a cart is available when a new tab is added : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase09")));
     }
 
 
     @Test(description = "Verify that privacy policy and about us links are working fine", priority = 9, groups = { "Regression_Test" })
-    public void TestCase10() throws InterruptedException {
+    public void TestCase10() throws InterruptedException, IOException {
         Boolean status;
 
         Register registration = new Register(driver);
@@ -529,12 +551,12 @@ public class QKART_Tests {
         driver.close();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[1]).close();
         driver.switchTo().window(handles.toArray(new String[handles.size()])[0]);
-        test.log(LogStatus.PASS, "Testcase10 -> Verify that privacy policy and about us links are working fine : Passed");
+        test.log(LogStatus.PASS, "Testcase10 -> Verify that privacy policy and about us links are working fine : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase10")));
     }
 
     @Test(description = "Verify that the contact us dialog works fine", priority = 11, groups = { "Regression_Test" })
     @Parameters({ "TC11_ContactusUserName", "TC11_ContactUsEmail", "TC11_QueryContent" })
-    public void TestCase11(String contactName, String emailId, String msg) throws InterruptedException {
+    public void TestCase11(String contactName, String emailId, String msg) throws InterruptedException, IOException {
         Home homePage = new Home(driver);
         homePage.navigateToHome();
 
@@ -554,13 +576,13 @@ public class QKART_Tests {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOf(contactUs));
-        test.log(LogStatus.PASS, "Testcase11 -> Verify that the contact us dialog works fine : Passed");
+        test.log(LogStatus.PASS, "Testcase11 -> Verify that the contact us dialog works fine : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase11")));
     }
 
 
     @Test(description = "Ensure that the Advertisement Links on the QKART page are clickable", priority = 12, groups = { "Sanity_Test" })
     @Parameters({ "TC12_ProductNameToSearch", "TC12_AddresstoAdd" })
-    public void TestCase12(String productToSearch, String address) throws InterruptedException {
+    public void TestCase12(String productToSearch, String address) throws InterruptedException, IOException {
         Register registration = new Register(driver);
         registration.navigateToRegisterPage();
         Boolean status = registration.registerUser("testUser", "abc@125", true);
@@ -608,6 +630,6 @@ public class QKART_Tests {
 
         driver.switchTo().parentFrame();
         driver.navigate().back();
-        test.log(LogStatus.PASS, "Testcase12 -> Ensure that the Advertisement Links on the QKART page are clickable : Passed");
+        test.log(LogStatus.PASS, "Testcase12 -> Ensure that the Advertisement Links on the QKART page are clickable : Passed", test.addScreenCapture(takeScreenshot(driver, "PASSED", "Testcase12")));
     }
 }
