@@ -11,8 +11,12 @@ public class ExtentReportsSingleton {
     private static ExtentTest  extentTest = null;
 
     ExtentReportsSingleton () {
-        extentReports = new ExtentReports(System.getProperty("user.dir") + "/ExtentReport.html", true);
-        extentReports.loadConfig(new File (System.getProperty("user.dir") + "/extent-config.xml"));
+        File reportsDir = new File("./reports");
+        if (!reportsDir.exists()) {
+            reportsDir.mkdirs();
+        }
+        extentReports = new ExtentReports(reportsDir + "/index.html", true);
+        extentReports.loadConfig(new File (reportsDir + "/extent-config.xml"));
 
         extentTest = extentReports.startTest("QKART_TESTNG Test");
     }

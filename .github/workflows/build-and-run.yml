@@ -1,10 +1,7 @@
-name: Build and Run
+name: Build, Test, and Deploy
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -12,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  build-and-run:
+  build-test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,14 +22,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
       - name: Set up Docker and docker-compose
         uses: isbang/compose-action@v1.4.1
 
-      - name: Build with Gradle
+      - name: Run with Gradle
         run: |
           ./gradlew run | tee logs.txt
           ./generate_readme.py
@@ -42,5 +40,15 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
-          git commit -m "Validated TestCases on CI"
+          git commit -m "Automated CI/CD Validation commit"
           git push
+
+      - name: Test using Gradle with Extent Reports
+        run: |
+          ./gradlew test
+
+      - name: Deploy Test Results to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports
