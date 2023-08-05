@@ -17,84 +17,84 @@ Docker Compose services are already running.
 VNC URL: http://localhost:7900/?autoconnect=1&password=secret&resize=scale
 
 > Task :run
-2023-08-05T08:07:09.522957372 |  Start TestCase  |  Test Case 1: Verify User Registration and Login | DONE
-2023-08-05T08:07:12.589043525 |  TestCase 1  |  Test Case 1: User Registration Passed | PASS
-2023-08-05T08:07:14.096671686 |  Test Step  |  Test Case 1: User Perform Login | PASS
-2023-08-05T08:07:15.077273666 |  End TestCase  |  Test Case 1: Verify User Registration and Login | PASS
+2023-08-05T08:20:10.716183657 |  Start TestCase  |  Test Case 1: Verify User Registration and Login | DONE
+2023-08-05T08:20:13.862064716 |  TestCase 1  |  Test Case 1: User Registration Passed | PASS
+2023-08-05T08:20:14.931344712 |  Test Step  |  Test Case 1: User Perform Login | PASS
+2023-08-05T08:20:15.943018727 |  End TestCase  |  Test Case 1: Verify User Registration and Login | PASS
 
-2023-08-05T08:07:15.566911799 |  Start TestCase  |  Test Case 2: Verify User Registration with an existing username | DONE
-2023-08-05T08:07:17.623573401 |  Test Step  |  Test Case 2: User Registration | PASS
-2023-08-05T08:07:39.267929665 |  End TestCase  |  Test Case 2: Verify if user Reregistration using the same username is not allowed | PASS
+2023-08-05T08:20:16.669925425 |  Start TestCase  |  Test Case 2: Verify User Registration with an existing username | DONE
+2023-08-05T08:20:18.291440760 |  Test Step  |  Test Case 2: User Registration | PASS
+2023-08-05T08:20:40.075786025 |  End TestCase  |  Test Case 2: Verify if user Reregistration using the same username is not allowed | PASS
 
-2023-08-05T08:07:39.871413004 |  Start TestCase  |  Test Case 3: Verify functionality of the search box | DONE
-2023-08-05T08:07:42.817016090 |  Test Step  |  Successfully validated the search results | PASS
-2023-08-05T08:08:05.143997681 |  Test Step  |  Successfully validated that no products found message is displayed | PASS
-2023-08-05T08:08:05.144102782 |  End TestCase  |  Test Case 3: Verify functionality of the search box | PASS
+2023-08-05T08:20:40.704647783 |  Start TestCase  |  Test Case 3: Verify functionality of the search box | DONE
+2023-08-05T08:20:43.718943606 |  Test Step  |  Successfully validated the search results | PASS
+2023-08-05T08:21:06.075513497 |  Test Step  |  Successfully validated that no products found message is displayed | PASS
+2023-08-05T08:21:06.075958922 |  End TestCase  |  Test Case 3: Verify functionality of the search box | PASS
 
-2023-08-05T08:08:05.595227509 |  Start TestCase  |  Test Case 4: Verify the presence of Size Chart | DONE
-2023-08-05T08:08:11.081662345 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
-2023-08-05T08:08:11.134820861 |  Step Success  |  Validated presence of drop down | PASS
-2023-08-05T08:08:12.755565512 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
-2023-08-05T08:08:26.434206668 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
-2023-08-05T08:08:26.490427012 |  Step Success  |  Validated presence of drop down | PASS
-2023-08-05T08:08:28.082900239 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
-2023-08-05T08:08:39.217757801 |  End TestCase  |  Test Case 4: Verify the presence of Size Chart | PASS
+2023-08-05T08:21:06.554824123 |  Start TestCase  |  Test Case 4: Verify the presence of Size Chart | DONE
+2023-08-05T08:21:12.215892191 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
+2023-08-05T08:21:12.310262351 |  Step Success  |  Validated presence of drop down | PASS
+2023-08-05T08:21:14.007191088 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
+2023-08-05T08:21:27.777382138 |  Step Success  |  Successfully validated presence of Size Chart Link | PASS
+2023-08-05T08:21:27.841057761 |  Step Success  |  Validated presence of drop down | PASS
+2023-08-05T08:21:29.392304018 |  Step Success  |  Successfully validated contents of Size Chart Link | PASS
+2023-08-05T08:21:40.574745623 |  End TestCase  |  Test Case 4: Verify the presence of Size Chart | PASS
 
-2023-08-05T08:08:40.275602626 |  Start TestCase  |  Test Case 5: Verify Happy Flow of buying products | DONE
-2023-08-05T08:08:41.783556555 |  Step Success  |  User Registration:  | PASS
-2023-08-05T08:08:42.567719026 |  Step Success  |  User Perform Login:  | PASS
-2023-08-05T08:08:50.363917842 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
-2023-08-05T08:08:51.116349929 |  End TestCase  |  Test Case 5: Happy Flow Test Completed | PASS
+2023-08-05T08:21:41.634189087 |  Start TestCase  |  Test Case 5: Verify Happy Flow of buying products | DONE
+2023-08-05T08:21:43.909869633 |  Step Success  |  User Registration:  | PASS
+2023-08-05T08:21:44.907261967 |  Step Success  |  User Perform Login:  | PASS
+2023-08-05T08:21:52.338677730 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
+2023-08-05T08:21:53.313630625 |  End TestCase  |  Test Case 5: Happy Flow Test Completed | PASS
 
-2023-08-05T08:08:52.231079424 |  Start TestCase  |  Test Case 6: Verify that cart can be edited | DONE
-2023-08-05T08:08:53.597772660 |  Step Success  |  User Registration:  | PASS
-2023-08-05T08:08:54.670433748 |  Step Success  |  User Perform Login:  | PASS
-2023-08-05T08:09:02.815076817 |  Step Success  |  Updated quantity of Xtend Smart Watch to 2 | PASS
-2023-08-05T08:09:02.925038287 |  Step Success  |  Updated quantity of Yarine Floor Lamp to 0 | PASS
-2023-08-05T08:09:05.117149694 |  Step Success  |  Updated quantity of Xtend Smart Watch to 1 | PASS
-2023-08-05T08:09:07.079038659 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
-2023-08-05T08:09:07.864927135 |  End TestCase  |  Test Case 6: Verify that cart can be edited | PASS
+2023-08-05T08:21:54.480900753 |  Start TestCase  |  Test Case 6: Verify that cart can be edited | DONE
+2023-08-05T08:21:55.926780543 |  Step Success  |  User Registration:  | PASS
+2023-08-05T08:21:57.092486287 |  Step Success  |  User Perform Login:  | PASS
+2023-08-05T08:22:05.440983789 |  Step Success  |  Updated quantity of Xtend Smart Watch to 2 | PASS
+2023-08-05T08:22:05.541547909 |  Step Success  |  Updated quantity of Yarine Floor Lamp to 0 | PASS
+2023-08-05T08:22:07.732407017 |  Step Success  |  Updated quantity of Xtend Smart Watch to 1 | PASS
+2023-08-05T08:22:12.633602144 |  Step Success  |  Placing Order and Redirecting to Thanks Page:  | PASS
+2023-08-05T08:22:13.521982822 |  End TestCase  |  Test Case 6: Verify that cart can be edited | PASS
 
-2023-08-05T08:09:09.022943757 |  Start TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | DONE
-2023-08-05T08:09:10.866644827 |  Step Success  |  User Registration:  | PASS
-2023-08-05T08:09:12.819409008 |  Step Success  |  User Perform Login:  | PASS
-2023-08-05T08:09:15.905255106 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
-2023-08-05T08:09:18.674984460 |  Step Success  |  Added 'Xtend Smart Watch' to the cart | PASS
-2023-08-05T08:09:20.701532669 |  Step Success  |  User Perform Login after Logout:  | PASS
-2023-08-05T08:09:21.087662832 |  Step Success  |  Cart Contents Persisted after Logout:  | PASS
-2023-08-05T08:09:21.087761433 |  End TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | PASS
+2023-08-05T08:22:14.640608709 |  Start TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | DONE
+2023-08-05T08:22:16.740163044 |  Step Success  |  User Registration:  | PASS
+2023-08-05T08:22:18.215591231 |  Step Success  |  User Perform Login:  | PASS
+2023-08-05T08:22:23.217765165 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
+2023-08-05T08:22:25.827941272 |  Step Success  |  Added 'Xtend Smart Watch' to the cart | PASS
+2023-08-05T08:22:27.817720774 |  Step Success  |  User Perform Login after Logout:  | PASS
+2023-08-05T08:22:28.039602942 |  Step Success  |  Cart Contents Persisted after Logout:  | PASS
+2023-08-05T08:22:28.039930760 |  End TestCase  |  Test Case 7: Verify that cart contents are persisted after logout | PASS
 
-2023-08-05T08:09:21.907003935 |  Start TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | DONE
-2023-08-05T08:09:23.899668356 |  Step Success  |  User Registration:  | PASS
-2023-08-05T08:09:24.877591788 |  Step Success  |  User Perform Login:  | PASS
-2023-08-05T08:09:28.546884680 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
-2023-08-05T08:09:47.462531805 |  Step Success  |  Changed product quantity in the cart to 10 | PASS
-2023-08-05T08:09:52.244725838 |  Step Success  |  Verified that the insufficient balance error message is displayed | PASS
-2023-08-05T08:09:52.244826339 |  End TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | PASS
+2023-08-05T08:22:28.985191601 |  Start TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | DONE
+2023-08-05T08:22:31.039405053 |  Step Success  |  User Registration:  | PASS
+2023-08-05T08:22:31.912742619 |  Step Success  |  User Perform Login:  | PASS
+2023-08-05T08:22:35.368868707 |  Step Success  |  Added 'Stylecon 9 Seater RHS Sofa Set' to the cart | PASS
+2023-08-05T08:22:54.411947267 |  Step Success  |  Changed product quantity in the cart to 10 | PASS
+2023-08-05T08:22:58.852652617 |  Step Success  |  Verified that the insufficient balance error message is displayed | PASS
+2023-08-05T08:22:58.852758823 |  End TestCase  |  Test Case 8: Verify that insufficient balance error is thrown when the wallet balance is not enough | PASS
 
-2023-08-05T08:09:52.391753954 |  Start TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | DONE
-2023-08-05T08:09:54.542703815 |  Step Success  |  User Registration:  | PASS
-2023-08-05T08:09:55.514038196 |  Step Success  |  User Perform Login:  | PASS
-2023-08-05T08:09:58.732817556 |  Step Success  |  Added 'YONEX Smash Badminton Racquet' to the cart | PASS
-2023-08-05T08:10:00.197038893 |  Step Success  |  Verified that the cart contents are available in the new tab | PASS
-2023-08-05T08:10:00.270720275 |  End TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | PASS
+2023-08-05T08:22:59.007987765 |  Start TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | DONE
+2023-08-05T08:23:00.678925844 |  Step Success  |  User Registration:  | PASS
+2023-08-05T08:23:01.591436522 |  Step Success  |  User Perform Login:  | PASS
+2023-08-05T08:23:04.902535328 |  Step Success  |  Added 'YONEX Smash Badminton Racquet' to the cart | PASS
+2023-08-05T08:23:05.978625811 |  Step Success  |  Verified that the cart contents are available in the new tab | PASS
+2023-08-05T08:23:06.050767715 |  End TestCase  |  Test Case 9: Verify that product added to cart is available when a new tab is opened | PASS
 
-2023-08-05T08:10:00.611516825 |  Start TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | DONE
-2023-08-05T08:10:02.919024145 |  Step Success  |  User Registration:  | PASS
-2023-08-05T08:10:03.901177501 |  Step Success  |  User Perform Login:  | PASS
-2023-08-05T08:10:04.486174333 |  Step Success  |  Verifying parent page URL didn't change on Privacy Policy link click | PASS
-2023-08-05T08:10:04.650845818 |  Step Success  |  Verifying new tab opened has Privacy Policy page heading | PASS
-2023-08-05T08:10:05.305136018 |  Step Success  |  Verifying new tab opened has Terms Of Service page heading | PASS
-2023-08-05T08:10:05.456527375 |  End TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | PASS
+2023-08-05T08:23:06.401402261 |  Start TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | DONE
+2023-08-05T08:23:08.230834229 |  Step Success  |  User Registration:  | PASS
+2023-08-05T08:23:09.090612538 |  Step Success  |  User Perform Login:  | PASS
+2023-08-05T08:23:09.819180383 |  Step Success  |  Verifying parent page URL didn't change on Privacy Policy link click | PASS
+2023-08-05T08:23:10.117351345 |  Step Success  |  Verifying new tab opened has Privacy Policy page heading | PASS
+2023-08-05T08:23:10.552191981 |  Step Success  |  Verifying new tab opened has Terms Of Service page heading | PASS
+2023-08-05T08:23:10.724513684 |  End TestCase  |  Test Case 10: Verify that the Privacy Policy, About Us are displayed correctly | PASS
 
-2023-08-05T08:10:05.701184531 |  Start TestCase  |  Test Case 11: Verify that contact us option is working correctly  | DONE
-2023-08-05T08:10:07.494808399 |  End TestCase  |  Test Case 11: Verify that contact us option is working correctly  | PASS
+2023-08-05T08:23:10.961329355 |  Start TestCase  |  Test Case 11: Verify that contact us option is working correctly  | DONE
+2023-08-05T08:23:12.963550053 |  End TestCase  |  Test Case 11: Verify that contact us option is working correctly  | PASS
 
-2023-08-05T08:10:07.783219776 |  Start TestCase  |  Test Case 12: Ensure that the links on the QKART advertisement are clickable | DONE
-2023-08-05T08:10:17.127304917 |  Step   |  Verify that 3 Advertisements are available | PASS
-2023-08-05T08:10:17.327095903 |  Step   |  Verify that Advertisement 1 is clickable  | PASS
-2023-08-05T08:10:17.746820587 |  Step   |  Verify that Advertisement 2 is clickable  | PASS
-2023-08-05T08:10:17.746930788 |  End TestCase  |  Test Case 12:  Ensure that the links on the QKART advertisement are clickable | PASS
+2023-08-05T08:23:13.173365088 |  Start TestCase  |  Test Case 12: Ensure that the links on the QKART advertisement are clickable | DONE
+2023-08-05T08:23:22.154968078 |  Step   |  Verify that 3 Advertisements are available | PASS
+2023-08-05T08:23:22.355556404 |  Step   |  Verify that Advertisement 1 is clickable  | PASS
+2023-08-05T08:23:22.866914130 |  Step   |  Verify that Advertisement 2 is clickable  | PASS
+2023-08-05T08:23:22.867025036 |  End TestCase  |  Test Case 12:  Ensure that the links on the QKART advertisement are clickable | PASS
 
 12 out of 12 test cases Passed 
 
@@ -104,5 +104,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 See https://docs.gradle.org/8.0/userguide/command_line_interface.html#sec:command_line_warnings
 
-BUILD SUCCESSFUL in 3m 45s
+BUILD SUCCESSFUL in 3m 49s
 3 actionable tasks: 3 executed
