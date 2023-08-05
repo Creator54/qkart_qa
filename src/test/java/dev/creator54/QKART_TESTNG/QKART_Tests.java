@@ -44,7 +44,7 @@ public class QKART_Tests {
 
     public static String takeScreenshot(WebDriver driver, String description, String testCaseName) {
         try {
-            File screenshotsDir = new File("./screenshots");
+            File screenshotsDir = new File("./reports/screenshots");
             if (!screenshotsDir.exists()) {
                 screenshotsDir.mkdirs();
             }
