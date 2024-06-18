@@ -332,4 +332,4 @@ The project covers different scenarios to validate the functionality and behavio
 
 ## Results
 
-12 out of 12 test cases Passed 
+12 out of 12 test cases Passed
